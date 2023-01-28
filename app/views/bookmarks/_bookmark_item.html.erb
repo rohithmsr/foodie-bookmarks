@@ -1,13 +1,15 @@
-<li class="item">
+<div class="card">
+  <li class="item">
     <div class="image">
-        <%= image_tag "#{bookmark[:image]}", alt: "#{bookmark[:title]}" %>
+      <%= image_tag "#{bookmark[:image]}", alt: "#{bookmark[:title]}" %>
     </div>
     <div class="content">
-        <h3><%= bookmark[:title] %></h3>
-        <address><%= bookmark[:address] %></address>
-        <p><%= bookmark[:description] %></p>
+      <h3><%= bookmark[:title] %></h3>
+      <address><%= bookmark[:address] %></address>
+      <p><%= bookmark[:description] %></p>
     </div>
     <div class="actions">
-        <button>Add to Favorites</button>
+      <button>Add to Favorites</button>
     </div>
-</li>
+  </li>
+</div>
