@@ -1,0 +1,23 @@
+<div class="card">
+  <%= form_with model: @bookmark, method: :post, class: "form" do |f| %>
+    <div class="control">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div class="control">
+      <%= f.label :image_URL %>
+      <%= f.text_field :image_URL %>
+    </div>
+    <div class="control">
+      <%= f.label :address %>
+      <%= f.text_area :address %>
+    </div>
+    <div class="control">
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
