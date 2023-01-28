@@ -1,5 +1,5 @@
 <h1>All Bookmarks!</h1>
 
 <main class="main">
-  <%= render "bookmark_list" %>
+  <%= render partial: "bookmark_list", locals: { bookmarks: @bookmarks } %>
 </main>
