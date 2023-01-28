@@ -30,7 +30,8 @@
     text-align: center;
 }
 
-.actions button {
+.actions a {
+    text-decoration: none;
     font: inherit;
     cursor: pointer;
     color: #77002e;
@@ -40,8 +41,8 @@
     border-radius: 4px;
 }
 
-.actions button:hover,
-.actions button:active {
+.actions a:hover,
+.actions a:active {
     background-color: #ffe2ed;
 }
 
