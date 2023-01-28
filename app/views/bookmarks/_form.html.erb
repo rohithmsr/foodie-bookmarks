@@ -8,7 +8,7 @@
     </ul>
   <% end %>
 
-  <%= form_with model: @bookmark, method: :post, class: "form" do |f| %>
+  <%= form_with model: @bookmark, class: "form" do |f| %>
     <div class="control">
       <%= f.label :title %>
       <%= f.text_field :title %>

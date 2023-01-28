@@ -19,6 +19,21 @@ class BookmarksController < ApplicationController
     end
   end
 
+  def edit
+    @bookmark = Bookmark.find(params[:id])
+  end
+
+  def update
+    @bookmark = Bookmark.find(params[:id])
+
+    if @bookmark.update(bookmark_params)
+        flash[:notice] = "Bookmark was updated successfully!"
+        redirect_to bookmarks_path
+    else
+        render 'edit', :status => :unprocessable_entity
+    end
+  end
+
   private
     def bookmark_params
       params.require(:bookmark).permit(:title, :description, :address, :imageURL)
