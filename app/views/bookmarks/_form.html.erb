@@ -1,12 +1,21 @@
 <div class="card">
+  <% if @bookmark.errors.any? %>
+    <h2>The following errors prevented the data from being saved</h2>
+    <ul>
+      <% @bookmark.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
   <%= form_with model: @bookmark, method: :post, class: "form" do |f| %>
     <div class="control">
       <%= f.label :title %>
       <%= f.text_field :title %>
     </div>
     <div class="control">
-      <%= f.label :image_URL %>
-      <%= f.text_field :image_URL %>
+      <%= f.label :imageURL %>
+      <%= f.text_field :imageURL %>
     </div>
     <div class="control">
       <%= f.label :address %>
