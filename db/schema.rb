@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_28_140340) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_29_022805) do
   create_table "bookmarks", force: :cascade do |t|
     t.string "title"
     t.text "imageURL"
@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_28_140340) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "favorite", default: false
   end
 
 end
