@@ -1,4 +1,8 @@
-<main class="main">
-  <%= render "layouts/messages" %>
-  <%= render partial: "bookmark_list", locals: { bookmarks: @bookmarks } %>
+<%= render "layouts/messages" %>
+<main class="main grid">
+  <% if @bookmarks.empty? %>
+    <h1>No bookmarks added! Please try some interesting cuisines!</h1>
+  <% else %>
+    <%= render partial: "bookmark_list", locals: { bookmarks: @bookmarks } %>
+  <% end %>
 </main>
