@@ -9,7 +9,11 @@
       <p><%= bookmark[:description] %></p>
     </div>
     <div class="actions">
-      <%= link_to "Mark as Favorite", edit_bookmark_path(bookmark) %>
+      <% if bookmark[:favorite] == 1 %>
+        <%= link_to "Remove from Favorites", edit_bookmark_path(bookmark) %>
+      <% else %>
+        <%= link_to "Mark as Favorite", edit_bookmark_path(bookmark) %>
+      <% end %>
       <%= link_to "Update Bookmark", edit_bookmark_path(bookmark) %>
       <%= link_to "Delete Bookmark",
       bookmark_path(bookmark),
