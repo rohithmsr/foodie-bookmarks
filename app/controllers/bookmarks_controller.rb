@@ -41,6 +41,21 @@ class BookmarksController < ApplicationController
     redirect_to bookmarks_path
   end
 
+  def index_favorites
+    @bookmarks = Bookmark.where({ :favorite => true })
+  end
+
+  def toggle_favorites
+    @bookmark = Bookmark.find(params[:id])
+    if(@bookmark[:favorite] == true)
+      @bookmark.update(:favorite => false)
+    else
+      @bookmark.update(:favorite => true)
+    end
+    
+    redirect_to bookmarks_path
+  end
+
   private
     def bookmark_params
       params.require(:bookmark).permit(:title, :description, :address, :imageURL)

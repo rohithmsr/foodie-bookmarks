@@ -9,10 +9,18 @@
       <p><%= bookmark[:description] %></p>
     </div>
     <div class="actions">
-      <% if bookmark[:favorite] == 1 %>
-        <%= link_to "Remove from Favorites", edit_bookmark_path(bookmark) %>
+      <% if bookmark[:favorite] == true %>
+        <%= link_to "Remove from Favorites",
+        toggle_favorites_bookmark_path(bookmark),
+        data: {
+          turbo_method: "patch"
+        } %>
       <% else %>
-        <%= link_to "Mark as Favorite", edit_bookmark_path(bookmark) %>
+        <%= link_to "Mark as Favorite",
+        toggle_favorites_bookmark_path(bookmark),
+        data: {
+          turbo_method: "patch"
+        } %>
       <% end %>
       <%= link_to "Update Bookmark", edit_bookmark_path(bookmark) %>
       <%= link_to "Delete Bookmark",
